@@ -15,46 +15,50 @@ meta:
 
 ### 現状スキル
 
+※現在の社内での立ち位置を自己評価したものですので、世間一般的なレベルとは異なります。
+
+また、知識にも社内での運用ルール、文化をベースとしており世間一般の知識体系とは異なる部分があります。
+
 |大分類|中分類|小分類|レベル|
-| :-: | :-: | :-: | :-: |
-|フロント|言語|HTML|？|
-|^|^|CSS|？|
-|^|^|js|？|
-|^|フレームワーク|bootstrap|？|
-|^|^|vuejs|？|
-|^|^|bulma|？|
-|バックエンド|言語|PHP|？|
-|^|^|SQL|？|
-|^|^|java|？|
-|^|^|Python|？|
-|^|^|shellscript|？|
-|^|^|nodejs|？|
-|^|^|ruby|？|
-|^|^|VBA|？|
-|^|フレームワーク|wordpress|？|
-|^|^|Struts2|？|
-|^|^|fuelphp|？|
-|^|^|SpringBoot|？|
-|^|^|nuxtjs|？|
-|^|^|MyBatis|？|
-|インフラ、Cloud|AWS||？|
-|^|terraform||？|
-|^|ミドルウェア|Apache|？|
-|^|^|MySQL|？|
-|^|^|Nginx|？|
-|^|^|JBoss|？|
-|^|^|Tomcat|？|
-|ツール|git||？|
-|^|gitlab||？|
-|^|GitHub||？|
-|^|Docker||？|
-|^|Docker compose||？|
-|^|jMeter||？|
-|^|mackerel||？|
-|^|Redmine||？|
-|^|jira||？|
-|^|Google Analisys||？|
-|^|Google Search console||？|
+|:-:|:-:|:-:|:-:|
+|フロント|言語|HTML|★★★☆☆|
+|^|^|CSS|★★★☆☆|
+|^|^|js|★☆☆☆☆|
+|^|フレームワーク|bootstrap|★★☆☆☆|
+|^|^|vuejs|★★★☆☆|
+|^|^|bulma|★★★☆☆|
+|バックエンド|言語|PHP|★★★★★|
+|^|^|SQL|★★★☆☆|
+|^|^|java|★★☆☆☆|
+|^|^|Python|★★★☆☆|
+|^|^|shellscript|★★☆☆☆|
+|^|^|nodejs|★☆☆☆☆|
+|^|^|ruby|★☆☆☆☆|
+|^|^|VBA|★★☆☆☆|
+|^|フレームワーク|wordpress|★★★★★|
+|^|^|Struts2|★★☆☆☆|
+|^|^|fuelphp|★★☆☆☆|
+|^|^|SpringBoot|★★☆☆☆|
+|^|^|nuxtjs|★☆☆☆☆|
+|^|^|MyBatis|★★☆☆☆|
+|インフラ、Cloud|AWS||★★★★★|
+|^|terraform||★★☆☆☆|
+|^|ミドルウェア|Apache|★★★☆☆|
+|^|^|MySQL|★★☆☆☆|
+|^|^|Nginx|★★★☆☆|
+|^|^|JBoss|★★☆☆☆|
+|^|^|Tomcat|★☆☆☆☆|
+|ツール|git||★★★★☆|
+|^|gitlab||★★★☆☆|
+|^|GitHub||★★☆☆☆|
+|^|Docker||★★★★☆|
+|^|Docker compose||★★★★☆|
+|^|jMeter||★☆☆☆☆|
+|^|mackerel||★★★☆☆|
+|^|Redmine||★★★★☆|
+|^|jira||★☆☆☆☆|
+|^|Google Analisys||★★☆☆☆|
+|^|Google Search console||★★☆☆☆|
 
 - ★☆☆☆☆ 経験がある
 - ★★☆☆☆ 調べれば一人でできる
@@ -69,6 +73,8 @@ meta:
 - ROI
 
 ### エンジニアスキル系
+- SRE
+- DevOps
 - ソフトウェアアーキテクチャ
 - クリーンアーキテクチャ
 - ドメイン駆動設計
@@ -78,8 +84,3 @@ meta:
 - REST API
 - graphQL
 - Swagger
-
-### その他興味
-- ドイツ、ギムナジウム
-- モンゴル帝国史
-- 電磁気学

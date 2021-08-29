@@ -1,14 +1,19 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'タイトル',
+  title: 'nyamakiの開発日記',
   description: description,
+  locales: {
+    '/': {
+      lang: 'ja',
+    },
+  },
+  head: [
+    ["link", { rel: "icon", href: "/logo.svg", type: "image/svg+xml" }]
+  ],
   themeConfig: {
-    repo: '',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    logo: '/logo.svg',
+    lang: 'ja-JP',
     nav: [
       {
         text: 'AWS',
