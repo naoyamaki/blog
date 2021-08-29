@@ -11,6 +11,7 @@ meta:
 
 ## 自己紹介
 
+<ColorChecker/>
 
 ### 現状スキル
 
