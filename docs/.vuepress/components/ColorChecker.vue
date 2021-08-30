@@ -16,7 +16,7 @@
 
 <style lang="css" scoped>
 .rgb-checker {
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #eeeeee;
   margin: 8px;
   padding: 8px;
