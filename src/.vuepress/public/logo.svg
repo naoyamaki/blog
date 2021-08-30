@@ -1,0 +1,17 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg_null" width="256" height="272">
+<g id="root" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">		
+<rect id="shape.accent" fill="#c1eaf2" opacity=".5" transform="translate(173.610285, 103.939534) rotate(45) translate(-173.610285, -103.939534)" x="73.61" y="86.964" width="200" height="40">		
+</rect>		
+<rect id="shape.secondary" fill="#5cc2f2" opacity=".5" transform="translate(133.183959, 144.365861) rotate(45) translate(-133.183959, -144.365861)" x="33.184" y="127.39" width="200" height="40">		
+</rect>		
+<rect id="shape.primary" fill="#191ba9" opacity=".5" transform="translate(92.270568, 185.279251) rotate(45) translate(-92.270568, -185.279251)" x="-7.729" y="168.304" width="200" height="40">		
+</rect>		
+<rect id="shape.accent" fill="#c1eaf2" transform="translate(168.082375, 86.840028) rotate(45) translate(-168.082375, -86.840028)" x="66.082" y="66.926" width="200" height="40">		
+</rect>		
+<rect id="shape.secondary" fill="#5cc2f2" transform="translate(127.850437, 127.071965) rotate(45) translate(-127.850437, -127.071965)" x="25.85" y="107.158" width="200" height="40">		
+</rect>		
+<rect id="shape.primary" fill="#191ba9" transform="translate(86.947967, 167.974435) rotate(45) translate(-86.947967, -167.974435)" x="-15.052" y="148.061" width="200" height="40">		
+</rect>	
+</g>
+</svg>

@@ -3,6 +3,8 @@ const { description } = require('../../package')
 module.exports = {
   title: 'nyamakiの開発日記',
   description: description,
+  base: '/blog/',
+  dest: 'docs',
   locales: {
     '/': {
       lang: 'ja',
