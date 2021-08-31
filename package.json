@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/naoyamaki/blog#readme",
   "devDependencies": {
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.0.5",
     "vuepress": "^1.8.2"
   }
 }
