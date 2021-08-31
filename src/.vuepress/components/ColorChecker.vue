@@ -14,34 +14,34 @@
   </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .rgb-checker {
   border-radius: 8px;
   background-color: #eeeeee;
   margin: 8px;
   padding: 8px;
-}
-.rgb-input {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.rgb-input > input {
-  box-sizing: border-box;
-  width: 60%;
-  margin: 0;
-}
-.rgb-input > p {
-  box-sizing: border-box;
-  width: 40%;
-  margin: 0;
-  padding-left:16px;
-}
-.rgb-output > span {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
+  .rgb-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    >input {
+      box-sizing: border-box;
+      width: 60%;
+      margin: 0;
+    }
+    >p {
+      box-sizing: border-box;
+      width: 40%;
+      margin: 0;
+      padding-left:16px;
+    }
+  }
+  .rgb-output > span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+  }
 }
 </style>
 
