@@ -2,6 +2,9 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "12.x"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev src",
@@ -18,8 +21,8 @@
   },
   "homepage": "https://github.com/naoyamaki/blog#readme",
   "devDependencies": {
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.5",
-    "vuepress": "^1.8.2"
+    "node-sass": "5.0.0",
+    "sass-loader": "10.0.5",
+    "vuepress": "1.8.2"
   }
 }
