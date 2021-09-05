@@ -18,5 +18,5 @@ jobs:
       run: |
         git config --local user.email "${{secrets.EMAIL}}"
         git config --local user.name "${{secrets.USER_NAME}}"
-        git commit -m 'GitHub Actions commit'
+        git commit -m 'GitHub Actions commit' -a
         git push origin main
