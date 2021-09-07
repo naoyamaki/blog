@@ -34,5 +34,26 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/markdown-it',
+    [
+      "@vuepress/blog",
+      {
+        frontmatters: [
+          {
+            id: 'category',
+            keys: ['category'],
+            path: '/category/',
+            layout: 'Categories',
+            scopeLayout: 'Category'
+        },
+          {
+            id: "tag",
+            keys: ['tags'],
+            path: "/tag/",
+            layout: "Tags",
+            scopeLayout: "Tag"
+          }
+        ]
+      }
+    ]
   ]
 }
