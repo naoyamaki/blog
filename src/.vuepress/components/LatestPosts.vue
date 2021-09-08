@@ -1,7 +1,7 @@
 <template>
   <div class="latest-posts">
 		<article class="card" v-for="post in posts">
-      <a v-bind:href="post.path">
+      <a v-bind:href="'/blog'+post.path">
         <span>{{ post.frontmatter.category }}</span>
       <figure>
         <img v-bind:src="post.frontmatter.img" v-bind:alt="post.title">

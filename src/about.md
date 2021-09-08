@@ -1,10 +1,18 @@
 ---
-title: 自己紹介
+title: nyamakiの自己紹介
 meta:
+  - property: og:title
+    content: nyamakiの自己紹介
   - name: description
-    content: 自己紹介
+    content: このブログの筆者の自己紹介ページです。気が向き次第書き足していきます。
+  - property: og:description
+    content: このブログの筆者の自己紹介ページです。気が向き次第書き足していきます。
+  - property: og:image
+    content: https://naoyamaki.github.io/blog/top/ogimage.webp
+  - property: og:url
+    content: https://naoyamaki.github.io/blog/about/
+canonicalUrl: https://naoyamaki.github.io/blog/about/
 ---
-
 # 自己紹介
 
 2014年11月にベンチャー企業へ入社し、自社開発ツールのテスターとしてIT関係の仕事に関わる。  
@@ -31,7 +39,7 @@ meta:
 |バックエンド|言語|PHP|★★★★★|
 |^|^|SQL|★★★☆☆|
 |^|^|Java|★★☆☆☆|
-|^|^|Python|★★★☆☆|
+|^|^|python|★★★☆☆|
 |^|^|shell script|★★☆☆☆|
 |^|^|Node.js|★☆☆☆☆|
 |^|^|Ruby|★★☆☆☆|

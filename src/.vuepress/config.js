@@ -41,7 +41,8 @@ module.exports = {
           {
               id: 'post',
               dirname: 'posts',
-              itemPermalink: '/:slug',
+              path: '/blog',
+              itemPermalink: '/:slug'
           },
       ],
         frontmatters: [
