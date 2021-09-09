@@ -1,5 +1,6 @@
 ---
 title: ブログ始めてみます！
+description: お試しでブログを始めてみます、技術的なことも少しずつためていければなと思っております。
 meta:
   - property: og:title
     content: ブログ始めてみます！
