@@ -42,21 +42,22 @@ article.card {
     }
 
     div.sentence {
-      min-height: 192px;
       flex: 3;
       display: flex;
       flex-direction: column;
       p.title {
         font-size: 1.5em;
-        margin: .5em 0;
+        margin: .2em;
+        max-height: 40px;
       }
       p.description {
         font-size: 1em;
-        margin: .5em 0;
+        margin: .2em;
+        max-height: 78px;
       }
       time {
         text-align: right;
-        margin: .5em;
+        margin: .2em;
       }
     }
   }
