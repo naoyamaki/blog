@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         text: '日常',
-        link: '/category/diary/'
+        link: '/category/dairy/'
       }
     ],
   },

@@ -31,15 +31,6 @@ body
   box-sizing border-box
   border-bottom 1px solid $borderColor
 
-.sidebar-mask
-  position fixed
-  z-index 9
-  top 0
-  left 0
-  width 100vw
-  height 100vh
-  display none
-
 .sidebar
   font-size 16px
   background-color #fff
@@ -179,9 +170,6 @@ th, td
   padding .6em 1em
 
 .theme-container
-  &.sidebar-open
-    .sidebar-mask
-      display: block
 
   &.no-navbar
     {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6
