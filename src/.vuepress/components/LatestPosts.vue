@@ -1,6 +1,6 @@
 <template>
   <div class="latest-posts">
-		<article class="card" v-for="post in posts">
+		<article class="card" v-for="post in posts" v-bind:key="post">
       <a v-bind:href="'/blog'+post.path">
         <figure>
           <span>{{ post.frontmatter.category }}</span>
@@ -21,7 +21,7 @@ article.card {
   margin: 16px 0;
   border: 1px solid #9e9e9e;
   border-radius: 16px;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .5);
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, .5);
   a {
     display: flex;
     figure {
@@ -46,9 +46,13 @@ article.card {
       display: flex;
       flex-direction: column;
       p.title {
-        font-size: 1.5em;
+        font-size: 1.25em;
         margin: .2em;
-        max-height: 40px;
+        max-height: 3.4em;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
       }
       p.description {
         font-size: 1em;
@@ -56,8 +60,10 @@ article.card {
         max-height: 78px;
       }
       time {
-        text-align: right;
-        margin: .2em;
+        align-self: end;
+        margin-right: .5em;
+        margin-bottom: .5em;
+        margin-top: auto;
       }
     }
   }

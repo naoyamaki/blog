@@ -14,7 +14,7 @@ meta:
     content: https://naoyamaki.github.io/blog/hogenv/
 canonicalUrl: https://naoyamaki.github.io/blog/hogenv/
 date: 2021-09-28
-img: ./hogenv/thumbnail.webp
+img: /hogenv/thumbnail.webp
 category: dev
 tags:
   - shell script
