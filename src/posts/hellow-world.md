@@ -14,7 +14,7 @@ meta:
     content: https://naoyamaki.github.io/blog/hellow-world/
 canonicalUrl: https://naoyamaki.github.io/blog/hellow-world/
 date: 2021-09-09
-img: /hellow-world/thumbnail.webp
+img: /blog/hellow-world/thumbnail.webp
 category: dairy
 tags:
   - GitHub

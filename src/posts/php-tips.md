@@ -14,7 +14,7 @@ meta:
     content: https://naoyamaki.github.io/blog/php-tips/
 canonicalUrl: https://naoyamaki.github.io/blog/php-tips/
 date: 2021-09-22
-img: /php-tips/thumbnail.webp
+img: /blog/php-tips/thumbnail.webp
 category: dev
 tags:
   - PHP
