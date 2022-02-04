@@ -38,7 +38,58 @@ echo (int)$str;
 
 ## 条件判定
 
-工事中
+```php
+// 試したい値でそれぞれテストをしていく
+$target = null;
+//$target = "";
+//$target = 0;
+//$target = [];     // 空配列
+//$target = [""];   // 空文字要素が1つの配列
+//$target = [null]; // null要素が1つの配列
+//$target = [0];    // 0要素が1つの配列
+
+($target)          ? print("True") : print("False");echo PHP_EOL;
+($target == null)  ? print("True") : print("False");echo PHP_EOL;
+($target == 0)     ? print("True") : print("False");echo PHP_EOL;
+($target == "")    ? print("True") : print("False");echo PHP_EOL;
+($target === null) ? print("True") : print("False");echo PHP_EOL;
+($target === 0)    ? print("True") : print("False");echo PHP_EOL;
+($target === "")   ? print("True") : print("False");echo PHP_EOL;
+(!$target)         ? print("True") : print("False");echo PHP_EOL;
+($target != null)  ? print("True") : print("False");echo PHP_EOL;
+($target != 0)     ? print("True") : print("False");echo PHP_EOL;
+($target != "")    ? print("True") : print("False");echo PHP_EOL;
+($target !== null) ? print("True") : print("False");echo PHP_EOL;
+($target !== 0)    ? print("True") : print("False");echo PHP_EOL;
+($target !== "")   ? print("True") : print("False");echo PHP_EOL;
+isset($target)     ? print("True") : print("False");echo PHP_EOL;
+empty($target)     ? print("True") : print("False");echo PHP_EOL;
+is_null($target)   ? print("True") : print("False");echo PHP_EOL;
+```
+
+### 結果
+
+|                |未定義              |null |""    |0    |[]   |[""] |[null]|[0]  |
+|:-:             |:-:                |:-:  |:-:   |:-:  |:-:  |:-:  |:-:   |:-:  |
+|$target         |False(With Warning)|False|False |False|False|True |True  |True |
+|$target == null |True(With Warning) |True |True  |True |True |False|False |False|
+|$target == 0    |True(With Warning) |True |False |True |False|False|False |False|
+|$target == ""   |True(With Warning) |True |True  |False|False|False|False |False|
+|$target === null|True(With Warning) |True |False |False|False|False|False |False|
+|$target === 0   |False(With Warning)|False|False |True |False|False|False |False|
+|$target === ""  |False(With Warning)|False|True  |False|False|False|False |False|
+|!$target        |True(With Warning) |True |True  |True |True |False|False |False|
+|$target != null |False(With Warning)|False|False |False|False|True |True  |True |
+|$target != 0    |False(With Warning)|False|True  |False|True |True |True  |True |
+|$target != ""   |False(With Warning)|False|False |True |True |True |True  |True |
+|$target !== null|False(With Warning)|False|True  |True |True |True |True  |True |
+|$target !== 0   |True(With Warning) |True |True  |False|True |True |True  |True |
+|$target !== ""  |True(With Warning) |True |False |True |True |True |True  |True |
+|isset($target)  |False              |False|True  |True |True |True |True  |True |
+|empty($target)  |True               |True |True  |True |True |False|False |False|
+|is_null($target)|True(With Warning) |True |False |False|False|False|False |False|
+
+by PHP 8.1
 
 ## 配列の要素を関数で変換
 
