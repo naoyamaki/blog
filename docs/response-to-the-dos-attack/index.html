@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dosっぽい攻撃が来た時の（個人的）対応方針 | nyamakiの開発日記</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/logo.svg" type="image/svg+xml">
+    <meta name="description" content="Dosっぽいアクセスがあった場合にどういった判断をしてどういった対応をすればいいのか個人的な見解のまとめ">
+    <meta property="og:title" content="Dosっぽい攻撃が来た時の（個人的）対応方針">
+    <meta property="og:description" content="Dosっぽいアクセスがあった場合にどういった判断をしてどういった対応をすればいいのか個人的な見解のまとめ">
+    <meta property="og:image" content="https://naoyamaki.github.io/blog/response-to-the-dos-attack/thumbnail.webp">
+    <meta property="og:url" content="https://naoyamaki.github.io/blog/response-to-the-dos-attack/">
+    <meta charset="utf-8">
+    <meta property="og:site_name" content="nyamakiの開発日記">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="twitter:card" content="summary_large_image">
+    <link href="https://naoyamaki.github.io/blog/response-to-the-dos-attack/" rel="canonical" />
+    <link rel="preload" href="/blog/assets/css/0.styles.bf1b7e48.css" as="style"><link rel="preload" href="/blog/assets/js/app.f455876d.js" as="script"><link rel="preload" href="/blog/assets/js/12.1c5d17e5.js" as="script"><link rel="preload" href="/blog/assets/js/1.8283d186.js" as="script"><link rel="preload" href="/blog/assets/js/2.b5ea8c74.js" as="script"><link rel="preload" href="/blog/assets/js/20.26de17d5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.767c83ed.js"><link rel="prefetch" href="/blog/assets/js/11.5ade512d.js"><link rel="prefetch" href="/blog/assets/js/13.f364e31c.js"><link rel="prefetch" href="/blog/assets/js/14.54ef1dea.js"><link rel="prefetch" href="/blog/assets/js/15.a1f1c696.js"><link rel="prefetch" href="/blog/assets/js/16.11da1240.js"><link rel="prefetch" href="/blog/assets/js/17.88602c61.js"><link rel="prefetch" href="/blog/assets/js/18.31bb9386.js"><link rel="prefetch" href="/blog/assets/js/19.e08a2b61.js"><link rel="prefetch" href="/blog/assets/js/4.424e48bf.js"><link rel="prefetch" href="/blog/assets/js/5.d6b80aeb.js"><link rel="prefetch" href="/blog/assets/js/6.44f5dc08.js"><link rel="prefetch" href="/blog/assets/js/7.3d07998b.js"><link rel="prefetch" href="/blog/assets/js/8.20ac0881.js"><link rel="prefetch" href="/blog/assets/js/9.b0cc39d8.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bf1b7e48.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/logo.svg" alt="nyamakiの開発日記" class="logo"> <span class="site-name can-hide">nyamakiの開発日記</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/category/dev/" class="nav-link">
+  開発
+</a></div><div class="nav-item"><a href="/blog/category/dairy/" class="nav-link">
+  日常
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/category/dev/" class="nav-link">
+  開発
+</a></div><div class="nav-item"><a href="/blog/category/dairy/" class="nav-link">
+  日常
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dosっぽい攻撃が来た時の-個人的-対応方針"><a href="#dosっぽい攻撃が来た時の-個人的-対応方針" class="header-anchor">#</a> Dosっぽい攻撃が来た時の（個人的）対応方針</h1> <div class="custom-block tip"><p class="custom-block-title">結論</p> <p>IPやUAなどを調べて人間のアクセスか確認をする。<br>
+人でも、必要なクローラでもない場合はIPでアクセス拒否をしよう。<br>
+対応が終わり、アクセス元がクラウドサービスのIPだったら通報しよう。</p></div> <p>サイトを運営していると「急に〇〇の負荷が上がった！」ということを必ずしも経験しているだろう。</p> <p>この時サイトがいわゆる〇〇砲（田代砲を除く）でバズっているのであればうれしい悲鳴であり、<br>
+どのくらいで収束するか、サーバを増強するべきかは判断がつきやすい。<br>
+そうでない場合は、対応方針などを用意していないと事故につながる可能性がある。</p> <p>大量アクセスの原因が、ユーザの通常利用に起因するものなのか、悪意のある攻撃者によるものなのか。<br>
+どちらなのか判別する指標と対応方法、事後対応を紹介する。</p> <p>（前提として、サイトのwebサーバ、アプリケーションサーバ、DBなどの負荷が急増し、<br>
+その原因が内部のロジックや運用ではなくユーザのアクセスによるものと推測ができている状態、あるいはその可能性を疑っている状態である。）</p> <h2 id="原因がユーザによるものかの確認"><a href="#原因がユーザによるものかの確認" class="header-anchor">#</a> 原因がユーザによるものかの確認</h2> <p>まず、アクセスログから高負荷が発生した時間の前後にてアクセスが急増したIPを探す。<br>
+そのIPのアクセスログについて以下のことを確認していく</p> <ul><li>アクセスしているURLは存在するものか（<code>../../password</code>のように明らか攻撃していそうなアクセスであれば行儀が悪いのでこの時点でブロックしていい。）</li> <li>UAが一般に利用されているブラウザからか（headless Chromeだとseleniumを使ったアクセスの可能性がある。curlやRubyなどわかりやすい場合もある。）</li> <li>アクセス数 / 時間が現実味のある数値か（たとえば1秒間に20アクセスとかしていたら連打したとしても実現できなさそうなので、怪しい）</li> <li>（上と合わせて）リファラに妥当性はあるか</li> <li>IPからWHOIS情報を調べる（サクッと調べられる<a href="https://www.ip-adress.com/search" target="_blank" rel="noopener noreferrer">ip-adress.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>をよく使う、これでAWSやAzureのIPであれば十中八九通常のユーザではない）</li></ul> <p>確認が終わったら、得られた情報を総合的に見てユーザによるものか、その他機械によるアクセスかを判断する。<br>
+判断基準は各組織ごと作っていけばいいが、常識的にあまり変わらない判断基準になると思う。</p> <p>また、UAに<code>Googlebot</code>などの公式クローラの肩書きをつけている場合は、そのクローラについても調べよう。<br>
+また、公式では「このレンジのIPアドレス帯がうちのクローラですよ」と記載していることがほとんどで、IPアドレスが一致しない場合、<br>
+悪意のあるものからのアクセスと見てほぼ間違いないだろう。名前を偽っている時点でマナー違反だし、悪意がなければ名前を偽る必要もないからだ。</p> <p>また、あまり聞きなれないクローラだと、サイトにメリットをもたらさないクローラであったり、お作法が悪いと悪評のあるクローラもあるため、そういう観点でも調べてみよう。</p> <h2 id="ユーザでないと分かった後の対応"><a href="#ユーザでないと分かった後の対応" class="header-anchor">#</a> ユーザでないと分かった後の対応</h2> <p>通常ユーザでも有益なクローラでもなかった場合、まずIP単位でアクセスを遮断しよう。</p> <p>IPをブロックする際はIPを<a href="https://www.ip-adress.com/search" target="_blank" rel="noopener noreferrer">ip-adress.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>などで調べプロバイダなどではないことも念の為調べておこう。<br>
+IP単位でブロックしてしまうとその集合住宅や近隣の家庭からのアクセスなどもブロックしかねないため、その場合はUAも組み合わせてブロックするなどなるべく影響範囲を狭めよう。</p> <p>WAFなどを導入していればIP単位でのブロック機能なども備わっていると思うので利用しているサービスのドキュメントを読んでいただければ。。。<br>
+WAFを導入していない場合はロードバランサ、WebサーバにてIPを指定したアクセス拒否を追加しよう。</p> <h2 id="事後対応"><a href="#事後対応" class="header-anchor">#</a> 事後対応</h2> <p>「<a href="#%E5%8E%9F%E5%9B%A0%E3%81%8B%E3%82%99%E3%83%A6%E3%83%BC%E3%82%B5%E3%82%99%E3%81%AB%E3%82%88%E3%82%8B%E3%82%82%E3%81%AE%E3%81%8B%E3%81%AE%E7%A2%BA%E8%AA%8D">#原因がユーザによるものかの確認</a>」にて判断を迷ったものや判断の経緯、ブロックしたIPは記録に残しておこう。<br>
+次回、また対象のIPから大量のアクセスがあった際に傾向を読みやすくなり、判断もより早く決めるための材料となり得るからだ。</p> <p>また、クラウドサービスで取得したパブリクIPからの迷惑な大量アクセスであれば、そのクラウドサービスに通報することもできる。<br>
+AWSは以下ページにて迷惑な利用者を報告することができるGCPやAzure、Alibaba Cloudなどについてはわかり次第載せよう（とおもう）。</p> <p><a href="https://aws.amazon.com/jp/premiumsupport/knowledge-center/report-aws-abuse/" target="_blank" rel="noopener noreferrer">AWS リソースの不正使用を報告するにはどうすればよいですか?<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="準備できているといいなと思うこと"><a href="#準備できているといいなと思うこと" class="header-anchor">#</a> 準備できているといいなと思うこと</h2> <p>こういう準備ができていたら未然に防げたり、より良い対応ができるのになぁ、というものを書いていく。</p> <h3 id="キャッシュの導入"><a href="#キャッシュの導入" class="header-anchor">#</a> キャッシュの導入</h3> <p>静的ページであれば特別な理由がなければ導入しよう。<br>
+動的ページであってもキャッシングできる部分には導入し、そもそも大量アクセスに対応できるだけのサービスにしよう。</p> <h3 id="robots-txtにクローリング規約を記載"><a href="#robots-txtにクローリング規約を記載" class="header-anchor">#</a> robots.txtにクローリング規約を記載</h3> <p>クローラがサイトを短時間に大量に回遊したとき、高負荷になってしまうケースがある。<br>
+そういった際はrobots.txtに<code>Crawl-delay</code>を記載することを検討しよう。</p> <p>ちなみに<a href="http://www.robotstxt.org/" target="_blank" rel="noopener noreferrer">robots.txtの記載については公式サイト<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を参照し、<br>
+クローラによっては<code>Crawl-delay</code>を参照しない場合もあるため、各クローラの仕様の公式ドキュメントを確認しよう！！<br>
+（Googleは<code>Crawl-delay</code>を参照しないため、ウェブマスターツールから頻度を申請する必要がある）</p> <h3 id="事前にユーザにこういうことしたらブロックしますよという規約を掲載"><a href="#事前にユーザにこういうことしたらブロックしますよという規約を掲載" class="header-anchor">#</a> 事前にユーザにこういうことしたらブロックしますよという規約を掲載</h3> <p>これは、後述対応をする場合であろうとなかろうと作っておくべき。</p> <p>対応時の判断軸になり、スムーズに一貫した対応を誰でもできるようになるためである。<br>
+有事の際はエスカレーションやジャッジに時間をかけるのが一番勿体ないため、まず第一にやってもいい。</p> <h3 id="dos検知wafの導入"><a href="#dos検知wafの導入" class="header-anchor">#</a> Dos検知WAFの導入</h3> <p>n秒間にm回アクセスしたら一定期間アクセス遮断<br>
+という動作をするWAFサービスもあるが、お金がかけられないなど事情があれば、アクセスログを定期的にチェックしブロックするツールを作ってもいい。</p> <p>これのメリットは、機械的ルールで自動的な対応ができるため、オペレーションミスはなく、不要な工数を割くこともないからである。</p> <h3 id="今までのipブロック時の確認作業、ブロック作業の自動化"><a href="#今までのipブロック時の確認作業、ブロック作業の自動化" class="header-anchor">#</a> 今までのIPブロック時の確認作業、ブロック作業の自動化</h3> <p>何度かIPブロック作業をすると、機械的な作業になり工数のムダを感じてくるだろう。<br>
+であれば、まず「<a href="#%E4%BA%8B%E5%BE%8C%E5%AF%BE%E5%BF%9C">#事後対応</a>」にて記載したように記録した判断基準を基にブロック時のルールを固めよう。<br>
+それが自動化する時の仕様書となり、そのルールに則った通知やIPの情報提示をする。<br>
+その内容を確認し、「<a href="#Dos%E6%A4%9C%E7%9F%A5WAF%E3%81%AE%E5%B0%8E%E5%85%A5">#Dos検知WAFの導入</a>」にて記載したブロックツールを動作させてやれば、人を解する作業はほとんどなくなる。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.f455876d.js" defer></script><script src="/blog/assets/js/12.1c5d17e5.js" defer></script><script src="/blog/assets/js/1.8283d186.js" defer></script><script src="/blog/assets/js/2.b5ea8c74.js" defer></script><script src="/blog/assets/js/20.26de17d5.js" defer></script>
+  </body>
+</html>
