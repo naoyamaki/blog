@@ -39,8 +39,6 @@ npm run build
 
 GitHub Pagesでは`./docs/`配下を公開している
 
-TODO : GitHub Actions化
-
 ## Note
 
 Node.jsのバージョンが16だとsass-loaderインストール時に依存エラーが出てしまうようなので、  

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "main": "index.js",
   "scripts": {
@@ -21,10 +21,10 @@
     "url": "https://github.com/naoyamaki/blog/issues"
   },
   "homepage": "https://github.com/naoyamaki/blog#readme",
-  "devDependencies": {
-    "@vuepress/plugin-blog": "^1.9.4",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.5",
-    "vuepress": "^1.8.2"
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.8.1",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.0",
+    "vuepress": "^1.9.7"
   }
 }
